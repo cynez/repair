@@ -708,7 +708,7 @@ class menu:
 					try:id.append(xx['id']+'<=>'+xx['name'])
 					except:continue
 			except requests.exceptions.ConnectionError:prints(Panel(f"{WAR}Jaringan Anda Error, Silahkan Check Atau Coba Lagi",width=100,padding=(0),style=f"{A}"))
-			# except (KeyError,IOError):prints(Panel(f"{WAR}ID Target Yang Anda Masukan, Tidak Bersifat Public",width=100,padding=(0),style=f"{A}"))
+			except (KeyError,IOError):prints(Panel(f"{WAR}ID Target Yang Anda Masukan, Tidak Bersifat Public",width=100,padding=(0),style=f"{A}"))
 		try:
 			yz  = requests.Session().get('https://graph.facebook.com/%s?fields=name,id&access_token=%s'%(idz,codeteam["token"]),cookies={"cookie":codeteam["cookie"]})
 			zxc = json.loads(yz.text)
