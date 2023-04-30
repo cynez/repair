@@ -702,8 +702,8 @@ class menu:
 		idzz = input(f"{a}   ┗{k}Target ID : {a}").split("|")
 		for idz in idzz:
 			try:
-				zz = requests.get('https://graph.facebook.com/'+idz+'?fields=friends&limit=5000&access_token='+ mytok[0],cookies={'cookie': codeteam["cookie"]}).json()
-				for xx in zz['friends']['data']:
+				zz = requests.get('https://graph.facebook.com/'+idz+'/friends?fields=id,name&limit=5000&access_token='+ mytok[0],cookies={'cookie': codeteam["cookie"]}).json()
+				for xx in zz['data']:
 					open("x","a").write(xx["id"]+"|"+xx["name"]+"\n")
 					try:id.append(xx['id']+'<=>'+xx['name'])
 					except:continue
